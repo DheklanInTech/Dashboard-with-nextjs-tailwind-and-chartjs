@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Header = () => {
+const Header = ({title,subtitle}) => {
   return (
     <div className='flex justify-between p-4 pt-4'>
-        <h2>Dashboard</h2>
-        <h3>Welcome back!</h3>
+        <h2>{title}</h2>
+        <h3>{subtitle}</h3>
     </div>
   )
 }
