@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import {BsThreeDotsVertical} from "react-icons/bs";
 import { data } from '@/data/data';
 import Header from '@/components/Header';
@@ -42,8 +42,14 @@ const orders = () => {
                         </div>
                    </div>
                    <p className='text-gray-600 sm:text-left text-right'>
-                      <span className=''>{order.status}</span>
+                      <span className={`p-1 rounded-xl text-sm flex items-center justify-center w-[50%] ${order.status === "Processing" ? "bg-green-200" : order.status === 'Completed' ? 'bg-blue-200': "bg-yellow-200" }`}>{order.status}</span>
                    </p>
+
+                   <p className='hidden md:flex'>{order.date}</p>
+                   <div className='sm:flex hidden justify-between items-center '>
+                   <p>{order.method}</p>
+                    <BsThreeDotsVertical/>
+                   </div>
                 </li>
                 ))}
         </ul>
